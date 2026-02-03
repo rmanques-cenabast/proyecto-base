@@ -1,16 +1,18 @@
 import React from 'react'
-import './breadcrumb.css'
+import Breadcrumb from '../components/ui/Breadcrumb'
 
-export default function Manuales(){
+export default function Manuales() {
+  const breadcrumbItems = [
+    { label: 'Inicio', current: false },
+    { label: 'Manuales y Documentación', current: true }
+  ]
+
   return (
-    <div className="page-root">
-      <nav className="breadcrumb" aria-label="Breadcrumb">
-        <div className="crumb-home"><img src="/iconBreadcrumb.svg" alt="home"/></div>
-        <div className="crumb-item"><span className="crumb-text">Inicio</span></div>
-        <div className="chev"><img src="/iconBreadcrumbArrow.svg" alt=">"/></div>
-        <div className="crumb-item"><span className="crumb-text--current">Manuales y Documentación</span></div>
-      </nav>
-      <h1 className="page-title">Manuales y Documentación</h1>
+    <div className="p-[14px_24px_24px_24px]">
+      <Breadcrumb items={breadcrumbItems} />
+      <h1 className="w-[1044px] min-w-[155.5px] h-9 font-display font-semibold text-2xl leading-9 text-accent m-0">
+        Manuales y Documentación
+      </h1>
     </div>
   )
 }

@@ -10,6 +10,7 @@ import Reportes from './pages/Reportes'
 import Manuales from './pages/Manuales'
 import About from './pages/About'
 import Logout from './pages/Logout'
+import EjemplosCards from './pages/EjemplosCards'
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 
@@ -19,21 +20,22 @@ export default function App() {
   return (
     <div>
       {!isLogout && <Header userName="Nombre Apellido" userSub="" userEmail="correo@cenabast.cl" />}
-      <div className="flex min-h-screen pt-[60px]">
+      <div className="flex min-h-screen pt-header">
         {!isLogout && <Sidebar />}
-        <main className="flex-1 min-h-screen box-border p-[20px] ml-[300px]">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/inicio" element={<Inicio />} />
-          <Route path="/panel" element={<Panel />} />
-          <Route path="/gestion/usuarios" element={<Usuarios />} />
-          <Route path="/gestion/contratos" element={<Contratos />} />
-          <Route path="/gestion/configuracion" element={<Configuracion />} />
-          <Route path="/reportes" element={<Reportes />} />
-          <Route path="/manuales" element={<Manuales />} />
-          <Route path="/logout" element={<Logout />} />
-        </Routes>
+        <main className="flex-1 min-h-screen box-border p-5 ml-sidebar">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/inicio" element={<Inicio />} />
+            <Route path="/panel" element={<Panel />} />
+            <Route path="/gestion/usuarios" element={<Usuarios />} />
+            <Route path="/gestion/contratos" element={<Contratos />} />
+            <Route path="/gestion/configuracion" element={<Configuracion />} />
+            <Route path="/reportes" element={<Reportes />} />
+            <Route path="/manuales" element={<Manuales />} />
+            <Route path="/ejemplos" element={<EjemplosCards />} />
+            <Route path="/logout" element={<Logout />} />
+          </Routes>
         </main>
       </div>
     </div>
